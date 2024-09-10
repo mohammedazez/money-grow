@@ -3,6 +3,8 @@
 namespace App\Validators;
 
 use Respect\Validation\Validator as v;
+use Respect\Validation\Exceptions\NestedValidationException;
+
 
 
 class LoanValidator
@@ -25,5 +27,11 @@ class LoanValidator
             ->key('loan_purpose', v::in(['vacation', 'renovation', 'electronics', 'wedding', 'rent', 'car', 'investment']))
             ->key('dob', v::date('Y-m-d'))
             ->key('sex', v::in(['male', 'female']));
+
+            try {
+                $validator->assert($data);
+            } catch (NestedValidationException $exception) {
+                throw $exception;
+            }
     }
 }
