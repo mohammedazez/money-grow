@@ -1,6 +1,7 @@
 {
     "require": {
         "slim/slim": "4.*",
-        "respect/validation": "^2.3"
+        "respect/validation": "^2.3",
+        "slim/psr7": "^1.7"
     }
 }
