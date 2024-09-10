@@ -21,6 +21,19 @@ class LoanController
             return $response->withStatus(400)->withHeader('Content-Type', 'application/json')
                 ->getBody()->write(json_encode(['errors' => $errors]));
         }
+        
+          $logFilePath = __DIR__ . '/../../logs/loan_applications.txt';
+
+          if (!is_dir(dirname($logFilePath))) {
+              mkdir(dirname($logFilePath), 0777, true);
+          }
+  
+          $logData = json_encode($data) . PHP_EOL;
+  
+          file_put_contents($logFilePath, $logData, FILE_APPEND);
+  
+          $response->getBody()->write(json_encode(['message' => 'Application submitted successfully.']));
+          return $response->withHeader('Content-Type', 'application/json');
 
     }
 }
