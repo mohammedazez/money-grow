@@ -23,4 +23,6 @@ $app->get('/', function (Request $request, Response $response, $args) {
     return $response;
 });
 
+$app->post('/loan', [LoanController::class, 'apply']);
+
 $app->run();
