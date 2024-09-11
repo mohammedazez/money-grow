@@ -11,3 +11,4 @@
 {"name":"John doe","ktp":"1234560505907890","loan_amount":5000,"loan_period_months":2,"loan_purpose":"vacation","dob":"1990-05-05","sex":"male"}
 {"name":"John doe","ktp":"1234564505907890","loan_amount":5000,"loan_period_months":2,"loan_purpose":"vacation","dob":"1990-05-05","sex":"female"}
 {"name":"John doe","ktp":"1234564505907890","loan_amount":5000,"loan_period_months":2,"loan_purpose":"vacation","dob":"1990-05-05","sex":"female"}
+{"name":"John Doe","ktp":"1234560101901234","loan_amount":5000,"loan_period_months":2,"loan_purpose":"vacation","dob":"1990-01-01","sex":"male"}
