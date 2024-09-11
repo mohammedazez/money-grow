@@ -24,8 +24,9 @@ This endpoint allows users to submit a loan application.
 | Field         | Type    | Required | Description                                                                                          |
 |---------------|---------|----------|------------------------------------------------------------------------------------------------------|
 | `name`        | string  | Yes      | Full name of the applicant (must include at least two words).                                         |
-| `ktp`         | string  | Yes      | Indonesian 16-digit KTP number.                                                                      |
+| `ktp`         | string  | Yes      | Indonesian 16-digit KTP number and valid format for male or female.                                                                      |
 | `loan_amount` | integer | Yes      | Loan amount between 1000 and 10000.                                                                  |
+| `loan_period_months` | integer | Yes      | Loan period months amount between 1 and 60.                                                                  |
 | `loan_purpose`| string  | Yes      | Purpose of the loan. Must be one of: `vacation`, `renovation`, `electronics`, `wedding`, `rent`, `car`, `investment`. |
 | `dob`         | string  | Yes      | Date of birth in `YYYY-MM-DD` format.                                                                |
 | `sex`         | string  | Yes      | Applicant's gender, either `male` or `female`.                                                       |
@@ -39,6 +40,7 @@ curl --location 'http://localhost:8000/loan' \
     "name": "John Doe",
     "ktp": "1234560101991234",
     "loan_amount": 5000,
+     "loan_period_months": 2,
     "loan_purpose": "vacation",
     "dob": "1990-01-01",
     "sex": "male"
@@ -64,8 +66,9 @@ Example:
 {
     "errors": {
         "name": "Name must be present and include at least two words.",
-        "ktp": "KTP must be a 16-digit number.",
+        "ktp": "KTP must be a 16-digit number and should follow the correct format based on the date of birth and gender.",
         "loan_amount": "Loan amount must be between 1000 and 10000.",
+        "loan_period_months": "loan_period_months must be between 1 and 60",
         "loan_purpose": "Loan purpose must be one of: vacation, renovation, electronics, wedding, rent, car, investment.",
         "dob": "Date of birth must be in YYYY-MM-DD format.",
         "sex": "Sex must be either 'male' or 'female'."
