@@ -40,7 +40,7 @@ curl --location 'http://localhost:8000/loan' \
     "name": "John Doe",
     "ktp": "1234560101991234",
     "loan_amount": 5000,
-     "loan_period_months": 2,
+    "loan_period_months": 2,
     "loan_purpose": "vacation",
     "dob": "1990-01-01",
     "sex": "male"
@@ -105,6 +105,11 @@ mkdir logs
 php -S localhost:8000 -t public
 ```
 
+5. Start unit tests:
+```
+vendor/bin/phpunit
+```
+
 ```
 Directory Structure
 money-grow/
@@ -116,6 +121,8 @@ money-grow/
 │   ├── Validators/
 │   │   └── LoanValidator.php   # Contains validation logic
 ├── logs/                  # Directory for storing loan application logs
+├── tests/
+│   └── LoanControllerTest.php   # Contains unit tests
 ├── vendor/                # Composer dependencies
 ├── composer.json          # Composer configuration file
 └── README.md              # This documentation
@@ -128,3 +135,4 @@ The loan applications are logged in the /logs/loan_applications.txt file. Ensure
 Slim Framework (v4): A lightweight PHP framework for building APIs and web applications.
 Respect/Validation: A powerful validation library used to ensure the correctness of user input.
 PSR-7: HTTP message interfaces for request and response objects.
+phpunit/phpunit:  A unit testing framework for PHP.
