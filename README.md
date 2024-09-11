@@ -132,7 +132,9 @@ money-grow/
 The loan applications are logged in the /logs/loan_applications.txt file. Ensure that this directory exists and is writable by your web server. Each application submission appends a log entry containing the submitted data.
 
 ## Dependencies
-Slim Framework (v4): A lightweight PHP framework for building APIs and web applications.
-Respect/Validation: A powerful validation library used to ensure the correctness of user input.
-PSR-7: HTTP message interfaces for request and response objects.
-phpunit/phpunit:  A unit testing framework for PHP.
+
+- **Slim Framework (v4)**: A lightweight PHP framework for building APIs and web applications.
+- **Respect/Validation**: A powerful validation library used to ensure the correctness of user input.
+- **PSR-7**: HTTP message interfaces for request and response objects.
+- **phpunit/phpunit**: A unit testing framework for PHP.
+
